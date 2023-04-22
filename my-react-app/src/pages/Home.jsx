@@ -1,5 +1,12 @@
-const Home = () => {
-    return <h1>Home</h1>;
-  };
-  
-  export default Home;
+import Header from "../components/header";
+
+function Home() {
+    return (
+        <div>
+            <Header></Header>
+            <h1>hi! Welcome to the landing page</h1>
+        </div>
+    );
+}
+
+export default Home;
