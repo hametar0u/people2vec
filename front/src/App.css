@@ -20,6 +20,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: black;
 }
 
 html {
@@ -31,7 +32,7 @@ body {
     font-weight: 400;
     overflow-x: hidden;
     position: relative;
-    background-color: #121212 !important;
+    background-color: #ffffff !important;
     color: #fff !important;
     font-family: "Centra", sans-serif !important;
 }
@@ -103,14 +104,14 @@ nav.navbar {
 }
 nav.navbar.scrolled {
     padding: 0px 0;
-    background-color: #121212;
+    background-color: #e4fafb;
 }
 nav.navbar a.navbar-brand {
     width: 9%;
 }
 nav.navbar .navbar-nav .nav-link.navbar-link {
     font-weight: 400;
-    color: #fff !important;
+    color: #090909 !important;
     letter-spacing: 0.8px;
     padding: 0 25px;
     font-size: 18px;
@@ -145,7 +146,7 @@ span.navbar-text {
     width: 42px;
     height: 42px;
     position: absolute;
-    background-color: #ffffff;
+    background-color: #020202;
     border-radius: 50%;
     transform: scale(0);
     transition: 0.3s ease-in-out;
@@ -164,8 +165,8 @@ span.navbar-text {
 }
 .navbar-text button {
     font-weight: 700;
-    color: #fff;
-    border: 1px solid #fff;
+    color: #020202;
+    border: 1px solid #0a0a0a;
     padding: 18px 34px;
     font-size: 18px;
     margin-left: 18px;
@@ -181,7 +182,7 @@ span.navbar-text {
     width: 0%;
     height: 100%;
     position: absolute;
-    background-color: #fff;
+    background-color: #030303;
     left: 0;
     top: 0;
     z-index: -1;
@@ -246,10 +247,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .banner {
     margin-top: 0;
     padding: 260px 0 100px 0;
-    background-image: url("./assets/img/banner-bg.png");
+    background-image: url("./assets/img/bg2.jpeg");
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
+    color: black;
 }
 .banner .tagline {
     font-weight: 700;
@@ -260,7 +262,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
         rgba(170, 54, 124, 0.5) -5.91%,
         rgba(74, 47, 189, 0.5) 111.58%
     );
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(20, 20, 20, 0.5);
     font-size: 20px;
     margin-bottom: 16px;
     display: inline-block;
@@ -274,14 +276,14 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     display: block;
 }
 .banner p {
-    color: #b8b8b8;
+    color: #0e0e0e;
     font-size: 18px;
     letter-spacing: 0.8px;
     line-height: 1.5em;
     width: 96%;
 }
 .banner button {
-    color: #fff;
+    color: #040404;
     font-weight: 700;
     font-size: 20px;
     margin-top: 60px;
@@ -313,7 +315,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     }
 }
 .txt-rotate > .wrap {
-    border-right: 0.08em solid #666;
+    border-right: 0.08em solid #000000;
 }
 
 /************ Skills Css ************/
@@ -322,7 +324,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     position: relative;
 }
 .skill-bx {
-    background: #151515;
+    background: #def0f3;
     border-radius: 64px;
     text-align: center;
     padding: 60px 50px;
@@ -354,4 +356,183 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     bottom: 0;
     width: 40%;
     z-index: -4;
+}
+
+/* profile */
+.profile {
+    margin-top: 150px;
+}
+
+/************ profileInfo Css ************/
+.contact {
+    padding: 60px 0 200px 0;
+}
+.contact img {
+    width: 60%;
+}
+.contact h2 {
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.contact form input,
+.contact form textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    color: #030303;
+    margin: 0 0 8px 0;
+    padding: 18px 26px;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.8px;
+}
+.contact form input:focus,
+.contact form textarea:focus {
+    background: rgb(15, 15, 15);
+    color: #d2cdcd;
+}
+.contact form input::placeholder,
+.contact form textarea::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+}
+.contact form input:focus::placeholder,
+.contact form textarea:focus::placeholder {
+    color: #b6b2b2;
+    opacity: 0.8;
+}
+.contact form button {
+    font-weight: 700;
+    color: #000;
+    background-color: #fff;
+    padding: 14px 48px;
+    font-size: 18px;
+    margin-top: 25px;
+    border-radius: 0;
+    position: relative;
+    /* transition: 0.3s ease-in-out; */
+}
+.contact form button span {
+    z-index: 1;
+    position: relative;
+}
+.contact form button:hover {
+    color: #fff;
+}
+.contact form button::before {
+    content: "";
+    background: #121212;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    /* transition: 0.3s ease-in-out; */
+}
+.contact form button:hover::before {
+    width: 100%;
+}
+
+/************ login Css ************/
+.login2 {
+    margin-top: 200px;
+}
+.contact2 {
+    padding: 60px 0 60px 0;
+}
+.contact2 img {
+    width: 60%;
+}
+.contact2 h2 {
+    font-size: 45px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.contact2 form input,
+.contact2 form textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    color: #030303;
+    margin: 0 0 8px 0;
+    padding: 18px 26px;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.8px;
+}
+.contact2 form input:focus,
+.contact2 form textarea:focus {
+    background: rgb(15, 15, 15);
+    color: #d2cdcd;
+}
+.contact2 form input::placeholder,
+.contact2 form textarea::placeholder {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+}
+.contact2 form input:focus::placeholder,
+.contact2 form textarea:focus::placeholder {
+    color: #b6b2b2;
+    opacity: 0.8;
+}
+.contact2 form button {
+    font-weight: 700;
+    color: #000;
+    background-color: #fff;
+    padding: 14px 48px;
+    font-size: 18px;
+    margin-top: 25px;
+    border-radius: 0;
+    position: relative;
+}
+.contact2 form button span {
+    z-index: 1;
+    position: relative;
+}
+.contact2 form button:hover {
+    color: #fff;
+}
+.contact2 form button::before {
+    content: "";
+    background: #121212;
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+.contact2 form button:hover::before {
+    width: 100%;
+}
+
+.box {
+    padding: 0 0 50px 0;
+    position: relative;
+    width: 750px;
+    margin: 0 auto;
+}
+.box-bx {
+    background: #def0f3;
+    border-radius: 64px;
+    text-align: center;
+    padding: 60px 50px;
+    margin-top: -60px;
+}
+.box h2 {
+    font-size: 45px;
+    font-weight: 700;
+}
+.box p {
+    color: #b8b8b8;
+    font-size: 18px;
+    letter-spacing: 0.8px;
+    line-height: 1.5em;
+    margin: 14px 0 75px 0;
 }

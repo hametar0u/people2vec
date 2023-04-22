@@ -67,11 +67,11 @@ export const Matches = () => {
                     </div>
                 </div>
             </div>
-            <img
+            {/* <img
                 className="background-image-left"
                 src={colorSharp}
                 alt="Image"
-            />
+            /> */}
         </section>
     );
 };

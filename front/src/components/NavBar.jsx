@@ -58,7 +58,7 @@ export const NavBar = () => {
                                         : "navbar-link"
                                 }
                             >
-                                Home
+                                home
                             </Nav.Link>
                             <Nav.Link
                                 href="/Profile"
@@ -68,13 +68,13 @@ export const NavBar = () => {
                                         : "navbar-link"
                                 }
                             >
-                                Matches
+                                profile
                             </Nav.Link>
                         </Nav>
                         <span className="navbar-text">
                             <HashLink to="/">
                                 <button className="vvd">
-                                    <span>Sign Out</span>
+                                    <span>sign out</span>
                                 </button>
                             </HashLink>
                         </span>
