@@ -81,11 +81,11 @@ function SignupInfo() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const data_string = await toString(data);
-    formInitialDetails.data = data_string;
+    // const data_string = await toString(data);
+    // formInitialDetails.data = data_string;
 
     setButtonText("Sending...");
-    let response = await fetch("http://localhost:8000/signup", {
+    let response = await fetch("http://localhost:8000/users/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json;charset=utf-8",

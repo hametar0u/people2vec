@@ -221,12 +221,15 @@ def direct_html_parser(html, username):
     data.to_csv(f"./data/raw_data/{username}.tsv", index=None, sep='\t')
 
 
+@csrf_exempt
 def signup(request):
     # do some parsing shit
+    print("AAAAAAAAAAAAAAA")
+    print(request.username, request.password, request.email, request.phone, request.description)
     try:
-        direct_html_parser(html=request.data, username=request.username)  # save to tsv
-        calculate_feature_statistics(request.username, "title")
-        calculate_feature_statistics(request.username, "thumbnail")
+        # direct_html_parser(html=request.data, username=request.username)  # save to tsv
+        # calculate_feature_statistics(request.username, "title")
+        # calculate_feature_statistics(request.username, "thumbnail")
         user = User(username = request.username, 
                     password = request.password, 
                     email = request.email, 
@@ -240,7 +243,8 @@ def signup(request):
     except:
         return HttpResponse("Sum Ting Wong", status_code=500)
     
-
+    
+@csrf_exempt
 def get_FID_scores(request):
     user_1 = request.GET.get("user_1", "")
     user_2 = request.GET.get("user_2", "")
