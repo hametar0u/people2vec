@@ -548,3 +548,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     margin: 0 auto;
     position: relative;
 }
+
+.button-api {
+    background-color: #cccccc;
+    border-color: #000000;
+    border-width: 5px;
+}
