@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 from users.models import User
 
 import io
@@ -138,21 +139,26 @@ def get_user_dir(user):
 
 
 def get_features_dir(user, match_type):
-    root_dir = ""  # FILL THIS IN
-    features_dir = f"root_dir/{match_type}_{user}_features.npy"
+    root_dir = "../features"  # FILL THIS IN
+    features_dir = f"{root_dir}/{match_type}_{user}_features.npy"
     return features_dir
 
 
 def get_stats_dir(user, match_type):
-    root_dir = ""  # FILL THIS IN
-    stats_dir = (f"root_dir/{match_type}_{user}_stats_mu.npy",
-                 f"root_dir/{match_type}_{user}_stats_sigma.npy")
+    root_dir = "../stats"  # FILL THIS IN
+    stats_dir = (f"{root_dir}/{match_type}_{user}_stats_mu.npy",
+                 f"{root_dir}/{match_type}_{user}_stats_sigma.npy")
     return stats_dir
 
-
+@csrf_exempt 
 def calculate_feature_statistics(request):
-    user = User.get(request.user)
-    match_type = request.match_type  # either "title" or "thumbnail"
+    username = request.POST.get('user', '')
+    try:
+        user = User.objects.get(username=username)
+    except:
+        return HttpResponse("user not found", 404)
+    match_type = request.POST.get('match_type', '')
+    match_type = match_type  # either "title" or "thumbnail"
     
     history = pd.read_csv(get_user_dir(user), sep="\t")[:N]
     data = history[match_type].tolist()
@@ -169,12 +175,18 @@ def calculate_feature_statistics(request):
 
 
 def get_FID_scores(request):
-    user_1 = User.get(request.user_1)
-    user_2 = User.get(request.user_2)
-    match_type = request.match_type
+    user_1 = request.GET.get('user_1', '')
+    user_2 = request.GET.get('user_2', '')
+    try: 
+        user_1 = User.objects.get(username = user_1)
+        user_2 = User.objects.get(username = user_2)
+    except:
+        return HttpResponse("user doesn't exist", status_code=404)
     
-    stats_dir_1 = get_stats_dir(user_1, match_type)
-    stats_dir_2 = get_stats_dir(user_2, match_type)
+    match_type = request.GET.get('match_type', '')
+    
+    stats_dir_1 = get_stats_dir(user_1.username, match_type)
+    stats_dir_2 = get_stats_dir(user_2.username, match_type)
     
     mu_1 = np.load(stats_dir_1[0])
     sigma_1 = np.load(stats_dir_1[1])
@@ -184,4 +196,3 @@ def get_FID_scores(request):
     fid = frechet_distance(mu_1, sigma_1, mu_2, sigma_2)
     
     return HttpResponse(fid)
-
