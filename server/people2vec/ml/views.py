@@ -135,17 +135,19 @@ def index(request):
 
 
 def get_user_dir(user):  # gets the tsv of the user data based on their username
-    pass
+    root_dir = "data/raw_data"
+    user_dir = f"{root_dir}/{user}.tsv"
+    return user_dir
 
 
 def get_features_dir(user, match_type):
-    root_dir = "../features"  # FILL THIS IN
+    root_dir = "data/features"
     features_dir = f"{root_dir}/{match_type}_{user}_features.npy"
     return features_dir
 
 
 def get_stats_dir(user, match_type):
-    root_dir = "../stats"  # FILL THIS IN
+    root_dir = "../stats"
     stats_dir = (f"{root_dir}/{match_type}_{user}_stats_mu.npy",
                  f"{root_dir}/{match_type}_{user}_stats_sigma.npy")
     return stats_dir
