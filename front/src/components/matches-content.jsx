@@ -17,6 +17,7 @@ export const MatchesContent = () => {
         "description descriptiondescription descriptiondescription descriptiondescription description"
     );
     const [iFRAME, setiFRAME] = useState("https://projector.tensorflow.org/");
+    const [compatibility, setCompatibility] = useState(99);
 
     const responsive = {
         superLargeDesktop: {
@@ -78,6 +79,9 @@ export const MatchesContent = () => {
                                     <br></br>
                                     <br></br>
                                     <div className="card">
+                                        <br></br>
+                                        <br></br>
+                                        <h1>{compatibility}% matched</h1>
                                         <div className="content">
                                             <div className="details">
                                                 <h2>

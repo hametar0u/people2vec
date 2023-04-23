@@ -18,11 +18,22 @@ const APITester = () => {
         })
     };
 
+    const login = () => {
+        axios.post("http://localhost:8000/users/login", {username: "Jeffrey", password: "Jeffrey"})
+        .then(response => {
+            console.log(response.data);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
+
     return (
         <div>
             <input type="text" value={link === null ? "" : link}
         onChange={handleChange} ></input>
             <button onClick={handleClick} />
+            <button onClick={login}>login</button>
         </div>
     );
 }

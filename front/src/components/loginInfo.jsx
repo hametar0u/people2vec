@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 import Signup from "../signup";
+import axios from "axios"
 
 function LoginInfo() {
     const formInitialDetails = {
@@ -24,25 +25,37 @@ function LoginInfo() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setButtonText("Sending...");
-        let response = await fetch("http://localhost:5000/contact", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json;charset=utf-8",
-            },
-            body: JSON.stringify(formDetails),
+        // setButtonText("Sending...");
+        // let response = await fetch("http://localhost:5000/contact", {
+        //     method: "POST",
+        //     headers: {
+        //         "Content-Type": "application/json;charset=utf-8",
+        //     },
+        //     body: JSON.stringify(formDetails),
+        // });
+        // setButtonText("Send");
+        // let result = await response.json();
+        // setFormDetails(formInitialDetails);
+        // if (result.code == 200) {
+        //     setStatus({ succes: true, message: "Message sent successfully" });
+        // } else {
+        //     setStatus({
+        //         succes: false,
+        //         message: "Something went wrong, please try again later.",
+        //     });
+        // }
+        axios.post("http://localhost:8000/users/login", {
+            username: formDetails.email,
+            password: formDetails.password
+        })
+        .then(response => {
+            console.log(response.data);
+            // TODO: REDIRECT TO THE NEXT PAGE
+        })
+        .catch(err => {
+            console.log(err);
+            // USER NOT FOUND; HANDLE THIS SOMEHOW
         });
-        setButtonText("Send");
-        let result = await response.json();
-        setFormDetails(formInitialDetails);
-        if (result.code == 200) {
-            setStatus({ succes: true, message: "Message sent successfully" });
-        } else {
-            setStatus({
-                succes: false,
-                message: "Something went wrong, please try again later.",
-            });
-        }
     };
 
     const handleSignUp = async (e) => {
