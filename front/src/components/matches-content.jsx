@@ -179,7 +179,6 @@ export const MatchesContent = () => {
                                                 </h2>
                                                 <h2>
                                                     titles match score: {title}%
-                                                    matched
                                                 </h2>
                                                 <h2>
                                                     {thePerson}
@@ -204,12 +203,29 @@ export const MatchesContent = () => {
                             <br></br>
                             <br></br>
                             <br></br>
+                            <button
+                                className="prettyButton"
+                                onClick={() => navigate("/Map")}
+                            >
+                                view matches on a map
+                            </button>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <h2>v i d e o c l o u d</h2>
+                            <p>
+                                here is a visualization of your match and your
+                                shared videos embedding distributions!
+                            </p>
+                            <br></br>
                             <iframe
                                 src={iFRAME}
                                 width={1100}
                                 height={900}
                             ></iframe>
-                            <button onClick={() => navigate("/Map")}>view on map</button>
+                            <br></br>
+                            <br></br>
+                            {/* <button className="prettyButton" onClick={() => navigate("/Map")}>view on map</button> */}
                         </div>
                     </div>
                 </div>

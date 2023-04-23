@@ -27,6 +27,9 @@ function SignupInfo() {
     const handleSignUp = async (e) => {
         navigate("/Profile");
     };
+    const [iFRAME, setiFRAME] = useState(
+      "https://v2-embednotion.com/Tutorial-YouTube-Watch-History-7bdccc88a74747ebb969184727439756"
+  );
 
     const responsive = {
         superLargeDesktop: {
@@ -293,6 +296,7 @@ function SignupInfo() {
                                     >
                                         <br></br>
                                         <h2>2. give us your data</h2>
+                                        <p>instructions for generating your file below</p>
                                         <Col>
                                             <input
                                                 type="file"
@@ -358,8 +362,10 @@ function SignupInfo() {
                                                 </Carousel.Caption>
                                             </Carousel.Item>
                                         </Carousel> */}
-                                        <img src={contactImg} alt="Header Img" />
-                                        <br></br>
+                                        <img
+                                            src={contactImg}
+                                            alt="Header Img"
+                                        />
                                         <br></br>
                                     </div>
                                 )}
@@ -375,6 +381,9 @@ function SignupInfo() {
                         </Row>
                     </Row>
                 </form>
+                <br></br>
+                <br></br>
+                <iframe src={iFRAME} width={1100} height={900}></iframe>
             </Container>
         </section>
     );
