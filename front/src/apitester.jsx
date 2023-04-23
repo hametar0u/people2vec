@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Banner } from "./components/Banner";
 import axios from "axios";
+
 
 const APITester = () => {
   const [link, setLink] = useState("");
@@ -21,7 +23,7 @@ const APITester = () => {
 
   const getFID = () => {
     axios
-      .get("http://localhost:8000/ml/get_FID_scores", {
+      .get("localhost:8000/ml/get_FID_scores", {
         params: { user_1: "Jeffrey", user_2: "Jordan", match_type: "title" },
       })
       .then((response) => {
@@ -34,22 +36,23 @@ const APITester = () => {
 
   const calculate_feature_stats = () => {
     axios.post(
-      "http://localhost:8000/ml/calculate_feature_statistics",
+      "localhost:8000/ml/calculate_feature_statistics",
       { user: "Jeffrey", match_type: "title" },
       { credentials: "include" }
     );
   };
 
   return (
-    <div>
+    <div classname="App">
+      <Banner />
       <input
         type="text"
         value={link === null ? "" : link}
         onChange={handleChange}
-      ></input>
-      <button onClick={handleClick} />
-      <button onClick={getFID}>get FID</button>
-      <button onClick={calculate_feature_stats}>feature stats</button>
+      ></input>  <br />
+      <button classname="button-api" onClick={handleClick} /> <br />
+      <button classname="button-api" onClick={getFID}>get FID</button>  <br />
+      <button classname="button-api" onClick={calculate_feature_stats}>feature stats</button>  <br />
     </div>
   );
 };
