@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./card.css";
 
-function Cards(props) {
+function Cards({thing}) {
     // const [open, setOpen] = useState(false);
     const [age, setAge] = useState("3");
     const [location, setLocation] = useState("10 miles away");
-    const [name, setName] = useState("a lonely soul")
+    const [name, setName] = useState(thing)
     const [description, setDescription] = useState("description descriptiondescription descriptiondescription descriptiondescription description");
 
     return (
