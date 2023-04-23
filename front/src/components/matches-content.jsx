@@ -22,7 +22,7 @@ export const MatchesContent = () => {
             "likes cake",
             "96.61",
             "96.12",
-            "http://projector.tensorflow.org/?config=https://gist.githubusercontent.com/Prateik-11/e2699255b7932b48525e27ee597d156d/raw/14af1b00daba66714bc3498a4279c8907d6e96aa/projection_config.json"
+            "http://projector.tensorflow.org/?config=https://gist.githubusercontent.com/Prateik-11/e2699255b7932b48525e27ee597d156d/raw/14af1b00daba66714bc3498a4279c8907d6e96aa/projection_config.json",
         ],
         [
             "Angeline Xu",
@@ -32,7 +32,7 @@ export const MatchesContent = () => {
             "likes chocolate",
             "61.98",
             "84.69",
-            "http://projector.tensorflow.org/?config=https://gist.githubusercontent.com/Prateik-11/bf78c2a45f6348868c56c2e7e817aadf/raw/e6aba47e6dd254493048be169c8a112cfdbfa36a/projection_config.json"
+            "http://projector.tensorflow.org/?config=https://gist.githubusercontent.com/Prateik-11/bf78c2a45f6348868c56c2e7e817aadf/raw/e6aba47e6dd254493048be169c8a112cfdbfa36a/projection_config.json",
         ],
         [
             "Jeffrey Kwan",
@@ -42,7 +42,7 @@ export const MatchesContent = () => {
             "likes food",
             "57.067",
             "84.66",
-            "http://projector.tensorflow.org/?config=https://gist.githubusercontent.com/Prateik-11/b72ea57b38275da4cdf33541eac68cd4/raw/c7b78c2c362f5699af52679395028891597f123a/projection_config.json"
+            "http://projector.tensorflow.org/?config=https://gist.githubusercontent.com/Prateik-11/b72ea57b38275da4cdf33541eac68cd4/raw/c7b78c2c362f5699af52679395028891597f123a/projection_config.json",
         ],
         [
             "Jeffrey J",
@@ -52,7 +52,7 @@ export const MatchesContent = () => {
             "likes Japan",
             "38.30",
             "64.98",
-            "http://projector.tensorflow.org/?config=https://gist.githubusercontent.com/Prateik-11/ad8e18a3d6290b7cb9e2806288e03e68/raw/863b31b049e39db66a0930f05d60dacf2a8dfa9a/projection_config.json"
+            "http://projector.tensorflow.org/?config=https://gist.githubusercontent.com/Prateik-11/ad8e18a3d6290b7cb9e2806288e03e68/raw/863b31b049e39db66a0930f05d60dacf2a8dfa9a/projection_config.json",
         ],
         [
             "Jordan's Roomie",
@@ -62,7 +62,7 @@ export const MatchesContent = () => {
             "likes water",
             "47.50",
             "60.11",
-            "http://projector.tensorflow.org/?config=https://gist.githubusercontent.com/Prateik-11/a87a8bba4d4b3a1f51447790384d7a52/raw/6c07082e34b923b6510d572945ca967bccce92c6/projection_config.json"
+            "http://projector.tensorflow.org/?config=https://gist.githubusercontent.com/Prateik-11/a87a8bba4d4b3a1f51447790384d7a52/raw/6c07082e34b923b6510d572945ca967bccce92c6/projection_config.json",
         ],
     ]);
     const [thePerson, setThePerson] = useState("");
@@ -172,10 +172,12 @@ export const MatchesContent = () => {
                                         <div className="content">
                                             <div className="details">
                                                 <h2>
-                                                    thumbnails match score: {thumb}%
+                                                    thumbnails match score:{" "}
+                                                    {thumb}%
                                                 </h2>
                                                 <h2>
-                                                    titles match score: {title}% matched
+                                                    titles match score: {title}%
+                                                    matched
                                                 </h2>
                                                 <h2>
                                                     {thePerson}

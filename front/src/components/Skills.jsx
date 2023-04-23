@@ -34,11 +34,14 @@ export const Matches = () => {
                         <div className="skill-bx wow zoomIn">
                             <h2>what's so special?</h2>
                             <p>
-                                we use user youtube watch history as the primary
+                                forget about the catfishers and fake friends; we
+                                use our user youtube watch history as the primary
                                 method to help you find new connections as we
                                 have seen that oftentimes youtube seems to know
-                                us better than we know ourselves. <br></br> this
-                                will help you find your perfect connections.
+                                us better than we know ourselves. <br></br> <br></br>this will help
+                                you find your perfect connections who genuinely
+                                share similar interests, senses of humor, and
+                                love for cat videos.
                             </p>
                             <br></br>
                             <Carousel
