@@ -3,10 +3,6 @@ import meter2 from "../assets/img/meter2.svg";
 import meter3 from "../assets/img/meter3.svg";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import arrow1 from "../assets/img/arrow1.svg";
-import arrow2 from "../assets/img/arrow2.svg";
-import colorSharp from "../assets/img/color-sharp.png";
-import Cards from "./card";
 
 export const Matches = () => {
     const responsive = {
@@ -35,12 +31,13 @@ export const Matches = () => {
                 <div className="row">
                     <div className="col-12">
                         <div className="skill-bx wow zoomIn">
-                            <h2>Top Matches</h2>
+                            <h2>what's so special?</h2>
                             <p>
                                 Lorem Ipsum is simply dummy text of the printing
                                 and typesetting industry.<br></br> Lorem Ipsum
                                 has been the industry's standard dummy text.
                             </p>
+                            <br></br>
                             <Carousel
                                 responsive={responsive}
                                 infinite={true}
@@ -48,19 +45,19 @@ export const Matches = () => {
                             >
                                 <div className="item">
                                     <img src={meter1} alt="Image" />
-                                    <h5>Allen Bob</h5>
+                                    <h5>security</h5>
                                 </div>
                                 <div className="item">
                                     <img src={meter2} alt="Image" />
-                                    <h5>Brandy Melville</h5>
+                                    <h5>cutting edge algorithm</h5>
                                 </div>
                                 <div className="item">
                                     <img src={meter3} alt="Image" />
-                                    <h5>Davey Jones</h5>
+                                    <h5>authentic connection</h5>
                                 </div>
                                 <div className="item">
                                     <img src={meter1} alt="Image" />
-                                    <h5>Christy X</h5>
+                                    <h5>new roots</h5>
                                 </div>
                             </Carousel>
                         </div>

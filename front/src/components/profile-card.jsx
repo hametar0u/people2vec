@@ -42,10 +42,9 @@ export const ProfileC = () => {
                                 <br></br>
                                 <br></br>
                                 <p>
-                                    Lorem Ipsum is simply dummy text of the
-                                    printing and typesetting industry.<br></br>{" "}
-                                    Lorem Ipsum has been the industry's standard
-                                    dummy text.
+                                    here is all the data that we have from you.<br></br>{" "}
+                                    remember with our method of training, this is all we have on you as your privacy <br></br>
+                                    and security are the most important things to us
                                 </p>
                                 <ProfileInfo></ProfileInfo>
                             </div>

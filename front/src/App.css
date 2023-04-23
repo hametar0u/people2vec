@@ -243,6 +243,18 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     border-color: transparent;
 }
 
+.prettyButton {
+    font-weight: 700;
+    color: #020202;
+    border: 1px solid #0a0a0a;
+    padding: 18px 34px;
+    font-size: 18px;
+    margin-left: 18px;
+    position: relative;
+    background-color: transparent;
+    transition: 0.3s ease-in-out;
+}
+
 /************ Banner Css ************/
 .banner {
     margin-top: 0;

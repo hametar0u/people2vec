@@ -106,6 +106,8 @@ export const Banner = () => {
                     </Col>
                 </Row>
             </Container>
+            <br></br>
+            <br></br>
         </section>
     );
 };

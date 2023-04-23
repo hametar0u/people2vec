@@ -12,16 +12,76 @@ export const MatchesContent = () => {
         "bobby@gmail.com",
         "ashley jones",
     ]);
-    const [thePerson, setThePerson] = useState("idk");
-    const [age, setAge] = useState("3");
-    const [location, setLocation] = useState("10 miles away");
-    const [description, setDescription] = useState(
-        "description descriptiondescription descriptiondescription descriptiondescription description"
+    const [placeH, setPlaceH] = useState([
+        [
+            "Prateik Sinha",
+            "Prateik@gmail.com",
+            "20",
+            "5462564715",
+            "likes cake",
+            "96.61",
+            "96.12",
+        ],
+        [
+            "Angeline Xu",
+            "Angeline@gmail.com",
+            "20",
+            "9402114715",
+            "likes chocolate",
+            "61.98",
+            "84.69",
+        ],
+        [
+            "Jeffrey Kwan",
+            "Jeffrey@gmail.com",
+            "20",
+            "3461563795",
+            "likes food",
+            "57.067",
+            "84.66",
+        ],
+        [
+            "Jeffrey J",
+            "JJ@gmail.com",
+            "70",
+            "1502514715",
+            "likes Japan",
+            "38.30",
+            "64.98",
+        ],
+        [
+            "Jordan's Roomie",
+            "roomie@gmail.com",
+            "20",
+            "6402514715",
+            "likes water",
+            "47.50",
+            "60.11",
+        ],
+    ]);
+    const [thePerson, setThePerson] = useState("");
+    const [age, setAge] = useState("20");
+    const [description, setDescription] = useState("likes food");
+    const [name, setName] = useState("Jeffrey Kwan");
+    const [email, setEmail] = useState("Jeffrey@gmail.com");
+    const [number, setNumber] = useState(3461563795);
+    const [thumb, setThumb] = useState("57.067");
+    const [title, setTitle] = useState("84.66");
+    const [clicked, setClicked] = useState(false);
+
+    const [iFRAME, setiFRAME] = useState(
+        "http://projector.tensorflow.org/?config=https://gist.githubusercontent.com/Prateik-11/e2699255b7932b48525e27ee597d156d/raw/14af1b00daba66714bc3498a4279c8907d6e96aa/projection_config.json"
     );
-    const [iFRAME, setiFRAME] = useState("http://projector.tensorflow.org/?config=https://gist.githubusercontent.com/Prateik-11/e2699255b7932b48525e27ee597d156d/raw/14af1b00daba66714bc3498a4279c8907d6e96aa/projection_config.json");
     const [compatibility, setCompatibility] = useState(99);
 
     const handleClick = (thing) => {
+        setName(thing[0]);
+        setEmail(thing[1]);
+        setAge(thing[2]);
+        setNumber(thing[3]);
+        setDescription(thing[4]);
+        setThumb(thing[5]);
+        setTitle(thing[6]);
         axios
             .get("http://localhost:8000/users/get_user_data", {
                 params: { username: thing },
@@ -31,16 +91,12 @@ export const MatchesContent = () => {
                 console.log(response.data.username);
                 console.log(response.data.age);
                 setAge(response.data.age);
-                
-                //TODO: set logged in/authenticated to true
-                // navigate("/profile");
             })
             .catch((err) => {
                 console.log(err);
                 // USER NOT FOUND; HANDLE THIS SOMEHOW
             });
-        setThePerson(thing);
-
+        // setThePerson(thing);
     };
 
     const responsive = {
@@ -76,20 +132,26 @@ export const MatchesContent = () => {
                                 hopefully make some new friends!
                             </p>
                             <Row className="align-items-center">
-                                <Col size={12} md={4}>
+                                <Col size={12} md={5}>
                                     <div>
-                                        {people.map((item) => {
+                                        {placeH.map((item) => {
                                             return (
                                                 <div>
-                                                    <button
-                                                        onClick={() =>
-                                                            handleClick(item)
-                                                        }
-                                                    >
-                                                        {item}
-                                                        <br></br>
-                                                        <br></br>
-                                                    </button>
+                                                    <br></br>
+                                                    <br></br>
+                                                    <span className="prettyButton align-items-center">
+                                                        <button
+                                                            className="vvd align-items-center"
+                                                            onClick={() =>
+                                                                handleClick(
+                                                                    item
+                                                                )
+                                                            }
+                                                        >
+                                                            {item[0]}
+                                                        </button>
+                                                    </span>
+                                                    <br></br>
                                                 </div>
                                             );
                                         })}
@@ -102,24 +164,32 @@ export const MatchesContent = () => {
                                     <div className="card">
                                         <br></br>
                                         <br></br>
-                                        <h1>{compatibility}% matched</h1>
+                                        <h3>thumbnails: {thumb}% matched</h3>
+                                        <h3>titles: {title}% matched</h3>
                                         <div className="content">
                                             <div className="details">
                                                 <h2>
                                                     {thePerson}
                                                     <br></br>
                                                 </h2>
+                                                <h2>{name}</h2>
                                                 <h2>Age: {age}</h2>
-                                                <h2>{location}</h2>
+                                                <br></br>
+                                                <h2>d e s c r i p t i o n:</h2>
                                                 <h2>{description}</h2>
-                                                <div className="actionBtn">
-                                                    <button>connect</button>
-                                                </div>
+                                                <br></br>
+                                                <h2>c o n t a c t:</h2>
+                                                <h2>
+                                                    email: {email} | number:{" "}
+                                                    {number}
+                                                </h2>
                                             </div>
                                         </div>
                                     </div>
                                 </Col>
                             </Row>
+                            <br></br>
+                            <br></br>
                             <br></br>
                             <iframe
                                 src={iFRAME}

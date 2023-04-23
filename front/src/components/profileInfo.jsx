@@ -75,7 +75,7 @@ function ProfileInfo() {
                                             : ""
                                     }
                                 >
-                                    <h2>update profile</h2>
+                                    <h2>your profile</h2>
                                     <form onSubmit={handleSubmit}>
                                         <Row>
                                             <Col
@@ -88,7 +88,7 @@ function ProfileInfo() {
                                                     value={
                                                         formDetails.firstName
                                                     }
-                                                    placeholder="first name"
+                                                    placeholder="name: Jordan Lin"
                                                     onChange={(e) =>
                                                         onFormUpdate(
                                                             "firstName",
@@ -107,7 +107,7 @@ function ProfileInfo() {
                                                     value={
                                                         formDetails.lasttName
                                                     }
-                                                    placeholder="last name"
+                                                    placeholder="username: jlin123"
                                                     onChange={(e) =>
                                                         onFormUpdate(
                                                             "lastName",
@@ -124,7 +124,7 @@ function ProfileInfo() {
                                                 <input
                                                     type="email"
                                                     value={formDetails.email}
-                                                    placeholder="email address"
+                                                    placeholder="email: Jordan@gmail.com"
                                                     onChange={(e) =>
                                                         onFormUpdate(
                                                             "email",
@@ -141,7 +141,41 @@ function ProfileInfo() {
                                                 <input
                                                     type="tel"
                                                     value={formDetails.phone}
-                                                    placeholder="age"
+                                                    placeholder="location: Delaware"
+                                                    onChange={(e) =>
+                                                        onFormUpdate(
+                                                            "phone",
+                                                            e.target.value
+                                                        )
+                                                    }
+                                                />
+                                            </Col>
+                                            <Col
+                                                size={12}
+                                                sm={6}
+                                                className="px-1"
+                                            >
+                                                <input
+                                                    type="tel"
+                                                    value={formDetails.phone}
+                                                    placeholder="age: 20"
+                                                    onChange={(e) =>
+                                                        onFormUpdate(
+                                                            "phone",
+                                                            e.target.value
+                                                        )
+                                                    }
+                                                />
+                                            </Col>
+                                            <Col
+                                                size={12}
+                                                sm={6}
+                                                className="px-1"
+                                            >
+                                                <input
+                                                    type="tel"
+                                                    value={formDetails.phone}
+                                                    placeholder="phone #: 2425839134"
                                                     onChange={(e) =>
                                                         onFormUpdate(
                                                             "phone",
@@ -154,7 +188,7 @@ function ProfileInfo() {
                                                 <textarea
                                                     rows="6"
                                                     value={formDetails.message}
-                                                    placeholder="description"
+                                                    placeholder="likes water and long walks on the beach"
                                                     onChange={(e) =>
                                                         onFormUpdate(
                                                             "message",
@@ -162,9 +196,6 @@ function ProfileInfo() {
                                                         )
                                                     }
                                                 ></textarea>
-                                                <button type="submit">
-                                                    <span>{buttonText}</span>
-                                                </button>
                                             </Col>
                                             {status.message && (
                                                 <Col>
