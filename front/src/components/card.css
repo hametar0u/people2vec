@@ -85,11 +85,9 @@
 .card .content .details .actionBtn button {
     padding: 10px 30px;
     border-radius: 5px;
-    border: none;
-    outline: none;
     font-size: 1em;
     font-weight: 500;
     cursor: pointer;
     width: fit-content;
-    border: 5cap;
+    border:rgba(0, 0, 0, 0.35);
 }
