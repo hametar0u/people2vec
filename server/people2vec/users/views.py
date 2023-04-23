@@ -1,18 +1,23 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound
+from rest_framework.decorators import api_view
+
 from users.models import User
 
 # Create your views here.
 def index(request):
     return HttpResponse("hello world")
 
+@api_view(['POST'])
 def login(request):
-    user = User.get(username = request.username, password = request.password)
-    if not user:
-        return HttpResponse("user not found", status_code=404)
-    
-    else:
-        return HttpResponse("logged in", status_code=200)
+    username = request.data.get('username', '')
+    password = request.data.get('password', '')
+    try:
+        user = User.objects.get(username = username, password = password)
+    except:
+        return HttpResponseNotFound("invalid login")
+
+    return HttpResponse("logged in")
 
 
 def signup(request):
