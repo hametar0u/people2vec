@@ -10,6 +10,7 @@ import Login from "../login";
 import Signup from "../signup";
 import Matches from "../matches";
 import APITester from "../apitester";
+import BaseMap from "../Map";
 
 export const NavBar = () => {
     const [activeLink, setActiveLink] = useState("home");
@@ -53,6 +54,7 @@ export const NavBar = () => {
                 <Route path="/signup" element={<Signup />}></Route>
                 <Route path="/matches" element={<Matches />}></Route>
                 <Route path="/apitester" element={<APITester />}></Route>
+                <Route path="/Map" element={<BaseMap />}></Route>
             </Routes>
             <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
                 <Container>

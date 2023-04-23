@@ -1,10 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "react-multi-carousel/lib/styles.css";
 import Cards from "./card";
 import { Container, Row, Col } from "react-bootstrap";
 import "./card.css";
 import axios from "axios";
-import BaseMap from "../Map";
 
 export const MatchesContent = () => {
     const [people, setPeople] = useState([
@@ -74,6 +74,9 @@ export const MatchesContent = () => {
     const [thumb, setThumb] = useState("96.61");
     const [title, setTitle] = useState("96.12");
     const [clicked, setClicked] = useState(false);
+    const [mapToggle, setMapToggle] = useState(false);
+
+    const navigate = useNavigate();
 
     const [iFRAME, setiFRAME] = useState(
         "http://projector.tensorflow.org/?config=https://gist.githubusercontent.com/Prateik-11/b72ea57b38275da4cdf33541eac68cd4/raw/c7b78c2c362f5699af52679395028891597f123a/projection_config.json"
@@ -207,7 +210,7 @@ export const MatchesContent = () => {
                                 width={1100}
                                 height={900}
                             ></iframe>
-                            <BaseMap />
+                            <button onClick={() => navigate("/Map")}>view on map</button>
                         </div>
                     </div>
                 </div>
