@@ -28,6 +28,10 @@ export const MatchesContent = () => {
             })
             .then((response) => {
                 console.log(response.data);
+                console.log(response.data.username);
+                console.log(response.data.age);
+                setAge(response.data.age);
+                
                 //TODO: set logged in/authenticated to true
                 // navigate("/profile");
             })
@@ -36,6 +40,7 @@ export const MatchesContent = () => {
                 // USER NOT FOUND; HANDLE THIS SOMEHOW
             });
         setThePerson(thing);
+
     };
 
     const responsive = {
