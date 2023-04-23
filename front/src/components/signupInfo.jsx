@@ -28,8 +28,8 @@ function SignupInfo() {
         navigate("/Profile");
     };
     const [iFRAME, setiFRAME] = useState(
-      "https://v2-embednotion.com/Tutorial-YouTube-Watch-History-7bdccc88a74747ebb969184727439756"
-  );
+        "https://v2-embednotion.com/Tutorial-YouTube-Watch-History-7bdccc88a74747ebb969184727439756"
+    );
 
     const responsive = {
         superLargeDesktop: {
@@ -57,6 +57,10 @@ function SignupInfo() {
         phone: "",
         message: "",
         data: "",
+        username: "",
+        password: "",
+        address: "",
+        age: "",
     };
     const [formDetails, setFormDetails] = useState(formInitialDetails);
     const [buttonText, setButtonText] = useState("signup!");
@@ -154,7 +158,7 @@ function SignupInfo() {
                                                     value={
                                                         formDetails.firstName
                                                     }
-                                                    placeholder="full name"
+                                                    placeholder="first name"
                                                     onChange={(e) =>
                                                         onFormUpdate(
                                                             "firstName",
@@ -170,13 +174,45 @@ function SignupInfo() {
                                             >
                                                 <input
                                                     type="text"
-                                                    value={
-                                                        formDetails.lasttName
+                                                    value={formDetails.lastname}
+                                                    placeholder="last name"
+                                                    onChange={(e) =>
+                                                        onFormUpdate(
+                                                            "lastname",
+                                                            e.target.value
+                                                        )
                                                     }
+                                                />
+                                            </Col>
+                                            <Col
+                                                size={12}
+                                                sm={6}
+                                                className="px-1"
+                                            >
+                                                <input
+                                                    type="text"
+                                                    value={formDetails.username}
                                                     placeholder="username"
                                                     onChange={(e) =>
                                                         onFormUpdate(
-                                                            "lastName",
+                                                            "username",
+                                                            e.target.value
+                                                        )
+                                                    }
+                                                />
+                                            </Col>
+                                            <Col
+                                                size={12}
+                                                sm={6}
+                                                className="px-1"
+                                            >
+                                                <input
+                                                    type="tel"
+                                                    value={formDetails.password}
+                                                    placeholder="password"
+                                                    onChange={(e) =>
+                                                        onFormUpdate(
+                                                            "password",
                                                             e.target.value
                                                         )
                                                     }
@@ -223,11 +259,11 @@ function SignupInfo() {
                                             >
                                                 <input
                                                     type="tel"
-                                                    value={formDetails.phone}
+                                                    value={formDetails.address}
                                                     placeholder="address"
                                                     onChange={(e) =>
                                                         onFormUpdate(
-                                                            "phone",
+                                                            "address",
                                                             e.target.value
                                                         )
                                                     }
@@ -240,11 +276,11 @@ function SignupInfo() {
                                             >
                                                 <input
                                                     type="tel"
-                                                    value={formDetails.phone}
+                                                    value={formDetails.age}
                                                     placeholder="age"
                                                     onChange={(e) =>
                                                         onFormUpdate(
-                                                            "phone",
+                                                            "age",
                                                             e.target.value
                                                         )
                                                     }
@@ -263,6 +299,7 @@ function SignupInfo() {
                                                     }
                                                 ></textarea>
                                             </Col>
+
                                             {status.message && (
                                                 <Col>
                                                     <p
@@ -296,7 +333,10 @@ function SignupInfo() {
                                     >
                                         <br></br>
                                         <h2>2. give us your data</h2>
-                                        <p>instructions for generating your file below</p>
+                                        <p>
+                                            instructions for generating your
+                                            file below
+                                        </p>
                                         <Col>
                                             <input
                                                 type="file"
