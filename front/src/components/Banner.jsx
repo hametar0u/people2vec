@@ -68,7 +68,7 @@ export const Banner = () => {
                                     }
                                 >
                                     <span className="tagline">
-                                        find new friends, find new roots
+                                        find new friends, lay down new roots
                                     </span>
                                     <h1>
                                         {`people2vec:`}{" "}
@@ -80,10 +80,20 @@ export const Banner = () => {
                                             <span className="wrap">{text}</span>
                                         </span>
                                     </h1>
-                                    <p>ever find yourself in a brand new place? graduating soon and moving to a new city? studying abroad? want a fresh start? <br></br> <br></br>people2vc is the perfect way to find authentic connections and excitement in what otherwise could be a scary new experience. we are here to make your transition to a new and better life smoother.</p>
-                                    <button
-                                        onClick={() => navigate("/Login")}
-                                    >
+                                    <p>
+                                        ever find yourself in a brand new place?
+                                        graduating soon and moving to a new
+                                        city? studying abroad? want a fresh
+                                        start? <br></br> <br></br> people2vec is
+                                        the perfect way to find authentic
+                                        connections and excitement in what
+                                        otherwise could be a scary new
+                                        experience. we are here to make your
+                                        transition to a new and better life
+                                        smoother because home is not a always a
+                                        place; it is the people in your life.
+                                    </p>
+                                    <button onClick={() => navigate("/Login")}>
                                         LOGIN PAGE{" "}
                                         <ArrowRightCircle size={25} />
                                     </button>
