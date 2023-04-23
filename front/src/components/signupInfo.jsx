@@ -7,6 +7,7 @@ import contactImg from "../assets/img/userim.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 import Carousel from "react-bootstrap/Carousel";
+import axios from "axios";
 
 function SignupInfo() {
 
@@ -25,6 +26,7 @@ function SignupInfo() {
     }
   }
 
+  
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -50,33 +52,42 @@ function SignupInfo() {
     email: "",
     phone: "",
     message: "",
-    data: ""
+    data: "",
+    
   };
   const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState("signup!");
   const [status, setStatus] = useState({});
-  const [data, setData] = useState("");
-
-  useEffect(() => {}, [data]);
-
+  const [data, setData] = useState(null);
+  const [dataString, setDataString] = useState("");
+  
   const onFormUpdate = (category, value) => {
     setFormDetails({
       ...formDetails,
       [category]: value,
     });
   };
-
+  
   const toString = file => new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.readAsText(file);
     reader.onload = () => resolve(reader.result);
     reader.onerror = reject;
   });
-
+  
   // GOAL: after i click "send" button
   // 1. convert the uploaded file to a string THAT IS STORED IN A VARIABLE
   // 2. store that variable to be part of formInitialDetails (data entry)
   // 3. post formInitialDetails
+
+  useEffect(() => {
+    console.log("change");
+    setDataString(toString(data));
+  }, [data]);
+
+  useEffect(() => {
+    console.log(dataString);
+  }, [dataString]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

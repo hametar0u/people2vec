@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
+from rest_framework.decorators import api_view
 from users.models import User
 
 import io
@@ -220,17 +221,17 @@ def direct_html_parser(html, username):
     data = pd.DataFrame(data, columns = ["title", "channel", "time", "link", 'video_id', 'thumbnail', 'screenshot_1', 'screenshot_2', 'screenshot_3'])
     data.to_csv(f"./data/raw_data/{username}.tsv", index=None, sep='\t')
 
-
 @csrf_exempt
+@api_view(['POST'])
 def signup(request):
     # do some parsing shit
-    print("AAAAAAAAAAAAAAA")
-    print(request.username, request.password, request.email, request.phone, request.description)
+    html = request.data.get('html', '')
+    username = request.data.get('username', '')
     try:
-        # direct_html_parser(html=request.data, username=request.username)  # save to tsv
-        # calculate_feature_statistics(request.username, "title")
-        # calculate_feature_statistics(request.username, "thumbnail")
-        user = User(username = request.username, 
+        direct_html_parser(html=html, username=username)  # save to tsv
+        calculate_feature_statistics(username, "title")
+        calculate_feature_statistics(username, "thumbnail")
+        user = User(username = username, 
                     password = request.password, 
                     email = request.email, 
                     phone = request.phone,
