@@ -133,7 +133,7 @@ def index(request):
     return HttpResponse("hello world")
 
 
-def get_user_dir(user):
+def get_user_dir(user):  # gets the tsv of the user data based on their username
     pass
 
 
@@ -154,14 +154,15 @@ def calculate_feature_statistics(request):
     user = User.get(request.user)
     match_type = request.match_type  # either "title" or "thumbnail"
     
-    history = pd.read_csv(get_user_dir(user), sep="\t")[:N]
-    data = history[match_type].tolist()
+    history = pd.read_csv(get_user_dir(user), sep="\t")[:N]  # read in tsv of user data
+    data = history[match_type].tolist()  # get title/thumbnail as a list, [:N] select recent N
     
-    if match_type == "title":
+    if match_type == "title":  # features are 768-dimensional, so features is N x 768
         features = text2vec(data)
-    elif match_type == "thumbnail":
+    elif match_type == "thumbnail":  # N x 2048 (NumPy array)
         features = link2vec(data, N=N_vid)
-    mu, sigma = feature_statistics(features)
+    mu, sigma = feature_statistics(features)  # computes the mu and sigma of features
+    # mu 1 x (768 or 2048), sigma (768 or 2048) x (768 or 2048)
     
     np.save(get_features_dir(user, match_type), features)
     np.save(get_stats_dir(user, match_type)[0], mu)
