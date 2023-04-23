@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import DeckGL, {GeoJsonLayer, ArcLayer} from 'deck.gl';
+import DeckGL, {GeoJsonLayer, ArcLayer, IconLayer, TextLayer} from 'deck.gl';
+import Map from "react-map-gl";
 import axios from "axios";
 
 // source: Natural Earth http://www.naturalearthdata.com/ via geojson.xyz
@@ -20,21 +21,24 @@ const AIR_PORTS = {"type":"FeatureCollection","features":[{"type":"Feature","pro
 */
 
 const data = {"type":"FeatureCollection","features":[
-  {"type":"Feature","properties":{"scalerank":10, "username": "jeffrey@gmail.com", "text": "86"},"geometry":{"type":"Point","coordinates":[-118.450347,34.062161]}},
-  {"type":"Feature","properties":{"scalerank":10, "username": "prateik@gmail.com", "text": "68"},"geometry":{"type":"Point","coordinates":[-118.453823,34.072942]}},
-  {"type":"Feature","properties":{"scalerank":10, "username": "angeline@gmail.com", "text": "95"},"geometry":{"type":"Point","coordinates":[-118.452299,34.072484]}},
+  {"type":"Feature","properties":{"scalerank":6, "username": "jeffrey", "score": "57", "age": "20"},"geometry":{"type":"Point","coordinates":[-123.133837,49.225972]}},
+  {"type":"Feature","properties":{"scalerank":1, "username": "prateik", "score": "96", "age": "20"},"geometry":{"type":"Point","coordinates":[78.530380, 22.314535]}},
+  {"type":"Feature","properties":{"scalerank":5, "username": "angeline", "score": "62", "age": "20"},"geometry":{"type":"Point","coordinates":[-117.814591, 33.695064]}},
+  {"type":"Feature","properties":{"scalerank":1, "username": "jordan", "age": "20"},"geometry":{"type":"Point","coordinates":[-118.450411, 34.070973]}},
+  {"type":"Feature","properties":{"scalerank":8, "username": "jordan's roomie", "score": "47", "age": "20"},"geometry":{"type":"Point","coordinates":[-121.880651, 37.330609]}},
+  {"type":"Feature","properties":{"scalerank":10, "username": "Jeffrey (jp)", "score": "38", "age": "20"},"geometry":{"type":"Point","coordinates":[139.659989, 35.635531]}},
 ]
 };
 
 
 
 
-const Map = () => {
+const BaseMap = () => {
     const [sourceCoords, setSourceCoords] = useState([-118.450411, 34.070973]);
     const [INITIAL_VIEW_STATE, setINITIAL_VIEW_STATE] = useState({
-        latitude: 34.070973,
+        latitude: 44.070973,
         longitude: -118.450411,
-        zoom: 10,
+        zoom: 4,
         bearing: 0,
         pitch: 40
         });
@@ -64,7 +68,7 @@ const Map = () => {
   const onClick = info => {
     if (info.object) {
       // eslint-disable-next-line
-      alert(`${info.object.properties.username} (${info.object.properties.abbrev})`);
+      alert(`${info.object.properties.username}: ${info.object.properties.score}`);
     }
   };
 
@@ -72,7 +76,12 @@ const Map = () => {
     <>
     {data && 
     <DeckGL controller={true} initialViewState={INITIAL_VIEW_STATE}>
-      <GeoJsonLayer
+      <Map
+        reuseMaps
+        mapStyle={"mapbox://styles/mapbox/light-v10"}
+        mapboxAccessToken={"pk.eyJ1IjoibW9ua2VkZXYiLCJhIjoiY2xnc2dxYTJpMDVyaTNmcDc3M2F2ZnE5dyJ9.7G9Ruwt97OR5y-PTd87nMA"}
+      />
+      {/* <GeoJsonLayer
         id="base-map"
         data={COUNTRIES}
         stroked={true}
@@ -81,20 +90,23 @@ const Map = () => {
         opacity={0.4}
         getLineColor={[60, 60, 60]}
         getFillColor={[200, 200, 200]}
-      />
+      /> */}
       <GeoJsonLayer
         id="people"
         data={data}
         filled={true}
         pointRadiusMinPixels={2}
-        pointRadiusScale={100}
+        pointRadiusScale={3000}
         pointType='circle+text'
         getPointRadius={f => 11 - f.properties.scalerank}
-        getFillColor={[200, 0, 80, 180]}
+        getFillColor={f=> [255 - 255 * f.properties.score/100, 255 * f.properties.score/100, 0, 100]}
         pickable={true}
         autoHighlight={true}
         onClick={onClick}
-
+        getText={f => `${f.properties.username} (${f.properties.age})`}
+        getTextSize={16}
+        getPixelOffset={[0,10]}
+        getTooltip={({object}) => object && (object.properties.username || object.properties.station)}
       />
       <ArcLayer
         id="arcs"
@@ -112,4 +124,4 @@ const Map = () => {
   );
 };
 
-export default Map;
+export default BaseMap;

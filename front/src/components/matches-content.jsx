@@ -4,6 +4,7 @@ import Cards from "./card";
 import { Container, Row, Col } from "react-bootstrap";
 import "./card.css";
 import axios from "axios";
+import BaseMap from "../Map";
 
 export const MatchesContent = () => {
     const [people, setPeople] = useState([
@@ -202,6 +203,7 @@ export const MatchesContent = () => {
                                 width={1100}
                                 height={900}
                             ></iframe>
+                            <BaseMap />
                         </div>
                     </div>
                 </div>
