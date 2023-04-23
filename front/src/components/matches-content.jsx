@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "react-multi-carousel/lib/styles.css";
-import Cards from "./card";
 import { Container, Row, Col } from "react-bootstrap";
 import "./card.css";
 import axios from "axios";

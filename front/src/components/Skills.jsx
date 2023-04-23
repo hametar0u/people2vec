@@ -1,7 +1,7 @@
 import meter1 from "../assets/img/home.png";
 import meter3 from "../assets/img/connection.png";
 import meter2 from "../assets/img/sun.png";
-import meter4 from "../assets/img/comp.png";
+import meter4 from "../assets/img/comp2.png";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -35,13 +35,14 @@ export const Matches = () => {
                             <h2>what's so special?</h2>
                             <p>
                                 forget about the catfishers and fake friends; we
-                                use our user youtube watch history as the primary
-                                method to help you find new connections as we
-                                have seen that oftentimes youtube seems to know
-                                us better than we know ourselves. <br></br> <br></br>this will help
-                                you find your perfect connections who genuinely
-                                share similar interests, senses of humor, and
-                                love for cat videos.
+                                use our user youtube watch history as the
+                                primary method to help you find new connections
+                                as we have seen that oftentimes youtube seems to
+                                know us better than we know ourselves. <br></br>{" "}
+                                <br></br>this will help you find your perfect
+                                connections who genuinely share similar
+                                interests, senses of humor, and love for cat
+                                videos.
                             </p>
                             <br></br>
                             <Carousel
