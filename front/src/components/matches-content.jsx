@@ -21,10 +21,9 @@ export const MatchesContent = () => {
     const [iFRAME, setiFRAME] = useState("https://projector.tensorflow.org/");
     const [compatibility, setCompatibility] = useState(99);
 
-    async function handleClick(thing) {
-        axios
-            .get("http://localhost:8000/users/get_user_data", {
-                username: thing,
+    const handleClick = (thing) => {
+        axios.get("http://localhost:8000/users/get_user_data", {
+                params:{username: thing},
             })
             .then((response) => {
                 console.log(response.data);
@@ -57,10 +56,6 @@ export const MatchesContent = () => {
             items: 1,
         },
     };
-
-    async function handleClick(thing) {
-        setThePerson(thing);
-    }
 
     return (
         <section className="skill" id="skills">

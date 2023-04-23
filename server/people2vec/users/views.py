@@ -9,6 +9,20 @@ from users.models import User
 def index(request):
     return HttpResponse("hello world")
 
+@api_view(['GET'])
+def get_user_data(request):
+    username = request.GET.get('username','')
+    try:
+        user = User.objects.get(username=username)
+    except:
+        return HttpResponseNotFound("user not found")
+    
+    return HttpResponse(json.dumps({
+        "username": user.username,
+        "location": [user.latitude, user.longitude],
+        "age": user.age,
+    }))
+
 @api_view(['POST'])
 def login(request):
     username = request.data.get('username', '')
@@ -41,15 +55,3 @@ def signup(request):
     except:
         return HttpResponse("Sum Ting Wong", status_code=500)
     
-@api_view(['GET'])
-def get_user_data(request):
-    try:
-        user = User.objects.get(username=request.data.username)
-    except:
-        return HttpResponseNotFound("user not found")
-    
-    return json.dumps({
-        "username": user.username,
-        "location": [user.latitude, user.longitude],
-        "age": user.age,
-    })
