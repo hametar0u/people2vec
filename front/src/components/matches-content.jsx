@@ -3,11 +3,13 @@ import "react-multi-carousel/lib/styles.css";
 import Cards from "./card";
 import { Container, Row, Col } from "react-bootstrap";
 import "./card.css";
+import axios from "axios";
 
 export const MatchesContent = () => {
     const [people, setPeople] = useState([
-        "bob shirley",
-        "joanne tucker",
+        "Jeffrey@gmail.com",
+        "bob@gmail.com",
+        "bobby@gmail.com",
         "ashley jones",
     ]);
     const [thePerson, setThePerson] = useState("idk");
@@ -18,6 +20,23 @@ export const MatchesContent = () => {
     );
     const [iFRAME, setiFRAME] = useState("https://projector.tensorflow.org/");
     const [compatibility, setCompatibility] = useState(99);
+
+    async function handleClick(thing) {
+        axios
+            .get("http://localhost:8000/users/get_user_data", {
+                username: thing,
+            })
+            .then((response) => {
+                console.log(response.data);
+                //TODO: set logged in/authenticated to true
+                // navigate("/profile");
+            })
+            .catch((err) => {
+                console.log(err);
+                // USER NOT FOUND; HANDLE THIS SOMEHOW
+            });
+        setThePerson(thing);
+    }
 
     const responsive = {
         superLargeDesktop: {
