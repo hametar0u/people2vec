@@ -36,7 +36,7 @@ const MapObj = () => {
                     <div className="col-12">
                         <div className="skill-bx wow zoomIn">
                             
-                            <div style={{marginTop: "700px"}}></div>
+                            <div style={{marginTop: "1000px"}}></div>
                             <BaseMap style={{height: "100vw"}} />
                         </div>
                     </div>
