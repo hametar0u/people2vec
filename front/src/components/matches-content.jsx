@@ -78,7 +78,7 @@ export const MatchesContent = () => {
     const navigate = useNavigate();
 
     const [iFRAME, setiFRAME] = useState(
-        "http://projector.tensorflow.org/?config=https://gist.githubusercontent.com/Prateik-11/b72ea57b38275da4cdf33541eac68cd4/raw/c7b78c2c362f5699af52679395028891597f123a/projection_config.json"
+        "http://projector.tensorflow.org/?config=https://gist.githubusercontent.com/Prateik-11/e2699255b7932b48525e27ee597d156d/raw/14af1b00daba66714bc3498a4279c8907d6e96aa/projection_config.json"
     );
     const [compatibility, setCompatibility] = useState(99);
 
