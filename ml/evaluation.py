@@ -68,16 +68,22 @@ if __name__ == "__main__":
         data_ = history[args.type].tolist()
         data.append(data_)
     
+    features = []
     stats = []
     for data_ in tqdm(data):
         if args.type == "title":
-            features = tvc.text2vec(data_)
+            features_ = tvc.text2vec(data_)
         elif args.type == "thumbnail":
-            features = ivi.link2vec(data_, N=args.num_top // 10)
-        mu, sigma = feature_statistics(features)
+            features_ = ivi.link2vec(data_, N=args.num_top // 10)
+        features.append(features_)
+        mu, sigma = feature_statistics(features_)
         stats.append((mu, sigma))
     
     for i in range(len(stats)):
+        name = histories_file[i][:histories_file[i].find('.')]
+        np.save(f"./data/embeds/{args.type}_{name}_features.npy", features[i])
+        np.save(f"./data/embeds/{args.type}_{name}_stats_mu.npy", stats[i][0])
+        np.save(f"./data/embeds/{args.type}_{name}_stats_sigma.npy", stats[i][1])
         for j in range(i + 1, len(stats)):
             mu_1, sigma_1 = stats[i]
             mu_2, sigma_2 = stats[j]
