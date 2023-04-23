@@ -48,8 +48,8 @@ export const NavBar = () => {
         <Router>
             <Routes>
                 <Route path="/Profile" element={<Profile />}></Route>
-                <Route path="/Test" element={<Test />}></Route>
-                <Route path="/" element={<Login />}></Route>
+                <Route path="/Login" element={<Login />}></Route>
+                <Route path="/" element={<Test />}></Route>
                 <Route path="/signup" element={<Signup />}></Route>
                 <Route path="/matches" element={<Matches />}></Route>
                 <Route path="/apitester" element={<APITester />}></Route>
@@ -65,7 +65,7 @@ export const NavBar = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
                             <Nav.Link
-                                href="/Test"
+                                href="/"
                                 className={
                                     activeLink === "home"
                                         ? "active navbar-link"
@@ -96,7 +96,7 @@ export const NavBar = () => {
                             </Nav.Link>
                         </Nav>
                         <span className="navbar-text">
-                            <HashLink to="/">
+                            <HashLink to="/Login">
                                 <button className="vvd" onClick={handleSignUp}>
                                     <span>{buttonname}</span>
                                 </button>

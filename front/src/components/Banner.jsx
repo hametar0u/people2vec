@@ -82,7 +82,7 @@ export const Banner = () => {
                                     </h1>
                                     <p>ever find yourself in a new home? graduating soon and moving to a new city? studying abroad? want a fresh start? <br></br> <br></br>people2vc is the perfect way to find authentic connections and excitement in what otherwise could be a scary new experience. we are here to make your transition to a new and better life smoother.</p>
                                     <button
-                                        onClick={() => navigate("/")}
+                                        onClick={() => navigate("/Login")}
                                     >
                                         LOGIN PAGE{" "}
                                         <ArrowRightCircle size={25} />
