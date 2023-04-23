@@ -10,6 +10,7 @@ import { Routes, Route } from "react-router-dom";
 import Profile from "../profile";
 import Test from "../landing";
 import Login from "../login";
+import Signup from "../signup";
 
 export const NavBar = () => {
     const [activeLink, setActiveLink] = useState("home");
@@ -39,6 +40,7 @@ export const NavBar = () => {
                 <Route path="/Profile" element={<Profile />}></Route>
                 <Route path="/Test" element={<Test />}></Route>
                 <Route path="/" element={<Login />}></Route>
+                <Route path="/signup" element={<Signup />}></Route>
             </Routes>
             <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
                 <Container>

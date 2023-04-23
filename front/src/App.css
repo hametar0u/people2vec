@@ -259,10 +259,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     padding: 8px 10px;
     background: linear-gradient(
         90.21deg,
-        rgba(170, 54, 124, 0.5) -5.91%,
-        rgba(74, 47, 189, 0.5) 111.58%
+        rgba(225, 177, 206, 0.5) -5.91%,
+        rgba(157, 147, 206, 0.5) 111.58%
     );
-    border: 1px solid rgba(20, 20, 20, 0.5);
+    /* border: 1px solid rgba(20, 20, 20, 0.5); */
     font-size: 20px;
     margin-bottom: 16px;
     display: inline-block;
@@ -327,7 +327,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     background: #def0f3;
     border-radius: 64px;
     text-align: center;
-    padding: 60px 50px;
+    padding: 50px 50px;
     margin-top: -60px;
 }
 .skill h2 {
@@ -339,7 +339,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     font-size: 18px;
     letter-spacing: 0.8px;
     line-height: 1.5em;
-    margin: 14px 0 75px 0;
+    margin: 14px 0 14px 0;
 }
 .skill-slider {
     width: 80%;
@@ -349,13 +349,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .skill-slider .item img {
     width: 50%;
     margin: 0 auto 15px auto;
-}
-.background-image-left {
-    top: 28%;
-    position: absolute;
-    bottom: 0;
-    width: 40%;
-    z-index: -4;
 }
 
 /* profile */
@@ -535,4 +528,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     letter-spacing: 0.8px;
     line-height: 1.5em;
     margin: 14px 0 75px 0;
+}
+
+/* signup */
+.carousel-slider {
+    width: 70%;
+    margin: 0 auto;
+    position: relative;
 }

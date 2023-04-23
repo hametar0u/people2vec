@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import headerImg from "../assets/img/powerpuff.jpg";
+import headerImg from "../assets/img/smile.png";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
@@ -65,9 +65,9 @@ export const Banner = () => {
                                             : ""
                                     }
                                 >
-                                    {/* <span className="tagline">
+                                    <span className="tagline">
                                         find new friends
-                                    </span> */}
+                                    </span>
                                     <h1>
                                         {`people2vec:`}{" "}
                                         <span
