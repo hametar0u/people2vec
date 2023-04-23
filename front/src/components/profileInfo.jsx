@@ -107,7 +107,7 @@ function ProfileInfo() {
                                                     value={
                                                         formDetails.lasttName
                                                     }
-                                                    placeholder="username: jlin123"
+                                                    placeholder="username: jordanlin"
                                                     onChange={(e) =>
                                                         onFormUpdate(
                                                             "lastName",
@@ -124,7 +124,7 @@ function ProfileInfo() {
                                                 <input
                                                     type="email"
                                                     value={formDetails.email}
-                                                    placeholder="email: Jordan@gmail.com"
+                                                    placeholder="email: jordan@gmail.com"
                                                     onChange={(e) =>
                                                         onFormUpdate(
                                                             "email",
@@ -141,7 +141,7 @@ function ProfileInfo() {
                                                 <input
                                                     type="tel"
                                                     value={formDetails.phone}
-                                                    placeholder="location: Delaware"
+                                                    placeholder="location: LA"
                                                     onChange={(e) =>
                                                         onFormUpdate(
                                                             "phone",
@@ -158,7 +158,7 @@ function ProfileInfo() {
                                                 <input
                                                     type="tel"
                                                     value={formDetails.phone}
-                                                    placeholder="age: 20"
+                                                    placeholder="age: 19"
                                                     onChange={(e) =>
                                                         onFormUpdate(
                                                             "phone",
@@ -175,7 +175,7 @@ function ProfileInfo() {
                                                 <input
                                                     type="tel"
                                                     value={formDetails.phone}
-                                                    placeholder="phone #: 2425839134"
+                                                    placeholder="phone #: 1234567890"
                                                     onChange={(e) =>
                                                         onFormUpdate(
                                                             "phone",
@@ -188,7 +188,7 @@ function ProfileInfo() {
                                                 <textarea
                                                     rows="6"
                                                     value={formDetails.message}
-                                                    placeholder="likes water and long walks on the beach"
+                                                    placeholder="likes rhythm games and 'research'"
                                                     onChange={(e) =>
                                                         onFormUpdate(
                                                             "message",
