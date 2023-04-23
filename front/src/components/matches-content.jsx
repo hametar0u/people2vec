@@ -22,8 +22,9 @@ export const MatchesContent = () => {
     const [compatibility, setCompatibility] = useState(99);
 
     const handleClick = (thing) => {
-        axios.get("http://localhost:8000/users/get_user_data", {
-                params:{username: thing},
+        axios
+            .get("http://localhost:8000/users/get_user_data", {
+                params: { username: thing },
             })
             .then((response) => {
                 console.log(response.data);
@@ -35,7 +36,7 @@ export const MatchesContent = () => {
                 // USER NOT FOUND; HANDLE THIS SOMEHOW
             });
         setThePerson(thing);
-    }
+    };
 
     const responsive = {
         superLargeDesktop: {
@@ -63,6 +64,7 @@ export const MatchesContent = () => {
                 <div className="row">
                     <div className="col-12">
                         <div className="skill-bx wow zoomIn">
+                            <br></br>
                             <h2>m a t c h e s</h2>
                             <p>
                                 here you will find all of your matches and

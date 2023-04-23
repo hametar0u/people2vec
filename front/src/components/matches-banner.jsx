@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/smile.png";
+import moon from "../assets/img/moon.png";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import "animate.css";
+import { Button } from "react-bootstrap";
 import TrackVisibility from "react-on-screen";
 
 export const MatchesBanner = () => {
@@ -55,7 +57,14 @@ export const MatchesBanner = () => {
         <section className="matchesBanner" id="home">
             <Container>
                 <Row className="aligh-items-center">
+                    <button>
+                        <img
+                            style={{ width: "300px", height: "300px" }}
+                            src={moon}
+                        ></img>
+                    </button>
                 </Row>
+                <br></br>
             </Container>
         </section>
     );
