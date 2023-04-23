@@ -9,6 +9,7 @@ function Test() {
   return (
     <div className="App">
       <Banner />
+      <br></br>
       <Matches />
     </div>
   );
