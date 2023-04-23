@@ -3,7 +3,7 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import logo from "../assets/img/bubble2.png";
 import { HashLink } from "react-router-hash-link";
 import { BrowserRouter as Router } from "react-router-dom";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Profile from "../profile";
 import Test from "../landing";
 import Login from "../login";
@@ -14,6 +14,9 @@ import APITester from "../apitester";
 export const NavBar = () => {
     const [activeLink, setActiveLink] = useState("home");
     const [scrolled, setScrolled] = useState(false);
+    const [clicked, setClicked] = useState(false);
+    const [buttonname, setbuttonname] = useState("login page");
+    // const navigate = useNavigate();
 
     useEffect(() => {
         const onScroll = () => {
@@ -31,6 +34,14 @@ export const NavBar = () => {
 
     const onUpdateActiveLink = (value) => {
         setActiveLink(value);
+    };
+
+    const handleSignUp = async (e) => {
+        if (clicked) {
+            setbuttonname = "sign out";
+        } else {
+            setbuttonname = "sign in";
+        }
     };
 
     return (
@@ -86,8 +97,8 @@ export const NavBar = () => {
                         </Nav>
                         <span className="navbar-text">
                             <HashLink to="/">
-                                <button className="vvd">
-                                    <span>sign out</span>
+                                <button className="vvd" onClick={handleSignUp}>
+                                    <span>{buttonname}</span>
                                 </button>
                             </HashLink>
                         </span>

@@ -1,6 +1,7 @@
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
+import meter1 from "../assets/img/home.png";
+import meter3 from "../assets/img/connection.png";
+import meter2 from "../assets/img/sun.png";
+import meter4 from "../assets/img/comp.png";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -33,9 +34,11 @@ export const Matches = () => {
                         <div className="skill-bx wow zoomIn">
                             <h2>what's so special?</h2>
                             <p>
-                                Lorem Ipsum is simply dummy text of the printing
-                                and typesetting industry.<br></br> Lorem Ipsum
-                                has been the industry's standard dummy text.
+                                we use user youtube watch history as the primary
+                                method to help you find new connections as we
+                                have seen that oftentimes youtube seems to know
+                                us better than we know ourselves. <br></br> this
+                                will help you find your perfect connections.
                             </p>
                             <br></br>
                             <Carousel
@@ -45,7 +48,7 @@ export const Matches = () => {
                             >
                                 <div className="item">
                                     <img src={meter1} alt="Image" />
-                                    <h5>security</h5>
+                                    <h5>new roots</h5>
                                 </div>
                                 <div className="item">
                                     <img src={meter2} alt="Image" />
@@ -56,8 +59,8 @@ export const Matches = () => {
                                     <h5>authentic connection</h5>
                                 </div>
                                 <div className="item">
-                                    <img src={meter1} alt="Image" />
-                                    <h5>new roots</h5>
+                                    <img src={meter4} alt="Image" />
+                                    <h5>security</h5>
                                 </div>
                             </Carousel>
                         </div>

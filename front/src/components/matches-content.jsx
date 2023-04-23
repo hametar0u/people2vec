@@ -17,7 +17,7 @@ export const MatchesContent = () => {
         [
             "Prateik Sinha",
             "Prateik@gmail.com",
-            "20",
+            "21",
             "5462564715",
             "likes cake",
             "96.61",
@@ -66,13 +66,13 @@ export const MatchesContent = () => {
         ],
     ]);
     const [thePerson, setThePerson] = useState("");
-    const [age, setAge] = useState("20");
-    const [description, setDescription] = useState("likes food");
-    const [name, setName] = useState("Jeffrey Kwan");
-    const [email, setEmail] = useState("Jeffrey@gmail.com");
-    const [number, setNumber] = useState(3461563795);
-    const [thumb, setThumb] = useState("57.067");
-    const [title, setTitle] = useState("84.66");
+    const [age, setAge] = useState("21");
+    const [description, setDescription] = useState("likes cake");
+    const [name, setName] = useState("Prateik Sinha");
+    const [email, setEmail] = useState("Prateik@gmail.com");
+    const [number, setNumber] = useState(5462564715);
+    const [thumb, setThumb] = useState("96.61");
+    const [title, setTitle] = useState("96.12");
     const [clicked, setClicked] = useState(false);
 
     const [iFRAME, setiFRAME] = useState(
@@ -169,12 +169,14 @@ export const MatchesContent = () => {
                                     <br></br>
                                     <br></br>
                                     <div className="card">
-                                        <br></br>
-                                        <br></br>
-                                        <h3>thumbnails: {thumb}% matched</h3>
-                                        <h3>titles: {title}% matched</h3>
                                         <div className="content">
                                             <div className="details">
+                                                <h2>
+                                                    thumbnails match score: {thumb}%
+                                                </h2>
+                                                <h2>
+                                                    titles match score: {title}% matched
+                                                </h2>
                                                 <h2>
                                                     {thePerson}
                                                     <br></br>
