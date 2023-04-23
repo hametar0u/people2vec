@@ -3,3 +3,4 @@ server/venv/*
 server/people2vec/venv/*
 *.pyc
 my-react-app/package-lock.json
+server/people2vec/db.sqlite3

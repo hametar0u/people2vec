@@ -255,12 +255,15 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .matchesBanner {
     margin-top: 0;
-    padding: 260px 0 100px 0;
+    padding: 125px 0 125px 0;
     background-image: url("./assets/img/grid.jpeg");
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
     color: black;
+}
+.matchesBanner img {
+    animation: updown 3s linear infinite;
 }
 .banner .tagline {
     font-weight: 700;
@@ -544,4 +547,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     width: 70%;
     margin: 0 auto;
     position: relative;
+}
+
+.button-api {
+    background-color: #cccccc;
+    border-color: #000000;
+    border-width: 5px;
 }

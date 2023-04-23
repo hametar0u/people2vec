@@ -1,9 +1,6 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import logo from "../assets/img/logo.svg";
-import navIcon1 from "../assets/img/nav-icon1.svg";
-import navIcon2 from "../assets/img/nav-icon2.svg";
-import navIcon3 from "../assets/img/nav-icon3.svg";
+import logo from "../assets/img/bubble2.png";
 import { HashLink } from "react-router-hash-link";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
@@ -12,6 +9,7 @@ import Test from "../landing";
 import Login from "../login";
 import Signup from "../signup";
 import Matches from "../matches";
+import APITester from "../apitester";
 
 export const NavBar = () => {
     const [activeLink, setActiveLink] = useState("home");
@@ -43,6 +41,7 @@ export const NavBar = () => {
                 <Route path="/" element={<Login />}></Route>
                 <Route path="/signup" element={<Signup />}></Route>
                 <Route path="/matches" element={<Matches />}></Route>
+                <Route path="/apitester" element={<APITester />}></Route>
             </Routes>
             <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
                 <Container>

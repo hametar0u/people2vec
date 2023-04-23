@@ -21,13 +21,17 @@ export const MatchesContent = () => {
     const [iFRAME, setiFRAME] = useState("http://projector.tensorflow.org/?config=https://gist.githubusercontent.com/Prateik-11/e2699255b7932b48525e27ee597d156d/raw/14af1b00daba66714bc3498a4279c8907d6e96aa/projection_config.json");
     const [compatibility, setCompatibility] = useState(99);
 
-    async function handleClick(thing) {
+    const handleClick = (thing) => {
         axios
             .get("http://localhost:8000/users/get_user_data", {
-                username: thing,
+                params: { username: thing },
             })
             .then((response) => {
                 console.log(response.data);
+                console.log(response.data.username);
+                console.log(response.data.age);
+                setAge(response.data.age);
+                
                 //TODO: set logged in/authenticated to true
                 // navigate("/profile");
             })
@@ -36,7 +40,8 @@ export const MatchesContent = () => {
                 // USER NOT FOUND; HANDLE THIS SOMEHOW
             });
         setThePerson(thing);
-    }
+
+    };
 
     const responsive = {
         superLargeDesktop: {
@@ -58,16 +63,13 @@ export const MatchesContent = () => {
         },
     };
 
-    async function handleClick(thing) {
-        setThePerson(thing);
-    }
-
     return (
         <section className="skill" id="skills">
             <div className="container">
                 <div className="row">
                     <div className="col-12">
                         <div className="skill-bx wow zoomIn">
+                            <br></br>
                             <h2>m a t c h e s</h2>
                             <p>
                                 here you will find all of your matches and
