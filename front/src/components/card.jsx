@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import "./card.css";
 
 function Cards(props) {
+    // const [open, setOpen] = useState(false);
+    const [age, setAge] = useState("3");
+    const [location, setLocation] = useState("10 miles away");
+    const [name, setName] = useState("a lonely soul")
+    const [description, setDescription] = useState("description descriptiondescription descriptiondescription descriptiondescription description");
+
     return (
         <body>
             <div className="card">
@@ -10,20 +16,19 @@ function Cards(props) {
                     {" "}
                     <div className="details">
                         <h2>
-                            Bob Shirley
+                            {name}
                             <br></br>
-                            <span>Engineer</span>
                         </h2>
                         <div className="data">
                             <h3>
-                                age: 25<br></br>
+                                age: {age}
                             </h3>
                             <h3>
-                                3 miles away<br></br>
+                                {location}<br></br>
                             </h3>
                         </div>
                         <h3>
-                            description descriptiondescription description
+                            {description}
                             <br></br>
                         </h3>
                         <div className="actionBtn">
@@ -33,28 +38,6 @@ function Cards(props) {
                 </div>
             </div>
         </body>
-        // <div className="card-container">
-        //     <header>
-        //         <br></br>
-        //         <h>hi</h>
-        //     </header>
-
-        //     <h2 className="normal-text">{props.city}</h2>
-        //     <div className="social-container">
-        //         <div className="followers">
-        //             <h1 className="bold-text">{props.followers}</h1>
-        //             <h2 className="smaller-text">hi</h2>
-        //         </div>
-        //         <div className="likes">
-        //             <h1 className="bold-text">{props.likes}</h1>
-        //             <h2 className="smaller-text">Likes</h2>
-        //         </div>
-        //         <div className="photos">
-        //             <h1 className="bold-text">{props.photos}</h1>
-        //             <h2 className="smaller-text">Photos</h2>
-        //         </div>
-        //     </div>
-        // </div>
     );
 }
 

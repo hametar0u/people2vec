@@ -11,6 +11,7 @@ import Profile from "../profile";
 import Test from "../landing";
 import Login from "../login";
 import Signup from "../signup";
+import Matches from "../matches";
 
 export const NavBar = () => {
     const [activeLink, setActiveLink] = useState("home");
@@ -41,6 +42,7 @@ export const NavBar = () => {
                 <Route path="/Test" element={<Test />}></Route>
                 <Route path="/" element={<Login />}></Route>
                 <Route path="/signup" element={<Signup />}></Route>
+                <Route path="/matches" element={<Matches />}></Route>
             </Routes>
             <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
                 <Container>
@@ -71,6 +73,16 @@ export const NavBar = () => {
                                 }
                             >
                                 profile
+                            </Nav.Link>
+                            <Nav.Link
+                                href="/matches"
+                                className={
+                                    activeLink === "matches"
+                                        ? "active navbar-link"
+                                        : "navbar-link"
+                                }
+                            >
+                                matches
                             </Nav.Link>
                         </Nav>
                         <span className="navbar-text">
