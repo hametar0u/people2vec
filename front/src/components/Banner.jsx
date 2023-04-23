@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/smile.png";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import "animate.css";
+import { useNavigate } from "react-router-dom";
 import TrackVisibility from "react-on-screen";
 
 export const Banner = () => {
@@ -13,6 +14,7 @@ export const Banner = () => {
     const [index, setIndex] = useState(1);
     const toRotate = ["discover", "have fun", "connect"];
     const period = 2000;
+    const navigate = useNavigate();
 
     useEffect(() => {
         let ticker = setInterval(() => {
@@ -66,7 +68,7 @@ export const Banner = () => {
                                     }
                                 >
                                     <span className="tagline">
-                                        find new friends
+                                        find new friends, find new roots
                                     </span>
                                     <h1>
                                         {`people2vec:`}{" "}
@@ -78,11 +80,11 @@ export const Banner = () => {
                                             <span className="wrap">{text}</span>
                                         </span>
                                     </h1>
-                                    <p>meet your matches</p>
+                                    <p>ever find yourself in a new home? graduating soon and moving to a new city? studying abroad? want a fresh start? <br></br> <br></br>people2vc is the perfect way to find authentic connections and excitement in what otherwise could be a scary new experience. we are here to make your transition to a new and better life smoother.</p>
                                     <button
-                                        onClick={() => console.log("connect")}
+                                        onClick={() => navigate("/")}
                                     >
-                                        GENERATE NEW MATCHES{" "}
+                                        LOGIN PAGE{" "}
                                         <ArrowRightCircle size={25} />
                                     </button>
                                 </div>
