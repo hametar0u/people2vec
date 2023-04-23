@@ -18,7 +18,7 @@ export const MatchesContent = () => {
     const [description, setDescription] = useState(
         "description descriptiondescription descriptiondescription descriptiondescription description"
     );
-    const [iFRAME, setiFRAME] = useState("https://projector.tensorflow.org/");
+    const [iFRAME, setiFRAME] = useState("http://projector.tensorflow.org/?config=https://gist.githubusercontent.com/Prateik-11/e2699255b7932b48525e27ee597d156d/raw/14af1b00daba66714bc3498a4279c8907d6e96aa/projection_config.json");
     const [compatibility, setCompatibility] = useState(99);
 
     async function handleClick(thing) {
